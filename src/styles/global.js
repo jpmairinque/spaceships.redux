@@ -43,6 +43,11 @@ height: 100%;
   justify-content: center;
   align-items: center;
 }
+
+a{
+  text-decoration: none;
+  color: black;
+}
 `
 
 
