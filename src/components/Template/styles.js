@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 
-    height: 80%;
-    width: 80%;
+    height: 70%;
+    width: 70%;
     background-color: white;
-
-
-
+    border-radius: 25px;
+    overflow: scroll;
 
 `

@@ -1,12 +1,16 @@
 import React from 'react'
+import * as S from './styles'
 
-const ShipCard = ({name, home_port, image}) => {
+const ShipCard = ({ name, home_port, image }) => {
     return (
-        <div>
-            <h2>{name}</h2>
-            <p>{home_port}</p>
-            <img width="100px" src={image} alt="" />
-        </div>
+        <S.CardWrapper>
+            <img src={image} alt="" />
+            <S.CardDetail>
+                <h4>{name}</h4>
+                <p>{home_port}</p>
+            </S.CardDetail>
+
+        </S.CardWrapper>
     )
 }
 

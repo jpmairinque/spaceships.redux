@@ -6,7 +6,7 @@ const Template = ({children}) => {
     return (
         <S.Wrapper>
             <Header/>
-            
+            {children}
         </S.Wrapper>
     )
 }

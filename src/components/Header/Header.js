@@ -1,10 +1,12 @@
 import React from 'react'
 import * as S from './styles'
+import Ship from '../../assets/ship.svg'
 
 const Header = () => {
     return (
         <S.HeaderWrapper>
-            <h1>dweofje</h1>
+            <img src={Ship} alt="" />
+            <h1>Space Ships</h1>
         </S.HeaderWrapper>
     )
 }

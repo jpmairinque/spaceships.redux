@@ -3,6 +3,7 @@ import { useQuery, gql } from '@apollo/client'
 import { useDispatch, useSelector } from 'react-redux'
 import { setShips } from '../../redux/actions/ShipsActions'
 import ShipCard from '../../components/ShipCard/ShipCard'
+import { ShipsList } from '../../components/ShipsList/ShipsList'
 
 const QUERY_LIST_OF_SHIPS = gql`
 
@@ -36,11 +37,7 @@ const Home = () => {
         <div>
             {loading ?
                 <h1>CARREGANDO</h1>
-                : (ships && ships.ships.map((ship, key) => {
-                    return (
-                        <ShipCard {...ship} key={ship.id}/>
-                    )
-                }))}
+                : <ShipsList ships={ships}/>}
 
         </div>
     )

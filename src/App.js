@@ -11,7 +11,7 @@ function App() {
 
   return (
     
-      <div className="App">
+      <div  className="App">
         <ApolloProvider client={client}>
           <AppRoutes/>
           <GlobalStyle/>
