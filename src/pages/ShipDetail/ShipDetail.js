@@ -24,26 +24,33 @@ query Ship($id: ID!) {
 
 const ShipDetail = () => {
 
-    const {shipID} = useParams()
-    const { data, loading, error} = useQuery(QUERY_SHIP_DETAIL, {variables: {id: shipID}} )
+    const { shipID } = useParams()
+    const { data, loading, error } = useQuery(QUERY_SHIP_DETAIL, { variables: { id: shipID } })
 
     const { ship } = useSelector((state) => state.shipDetail)
     const dispatch = useDispatch()
-    
+
 
     useEffect(() => {
         dispatch(setShipDetail(data, error))
-    }, [data])
+    }, [data,error])
 
     return (
         <>
-        {loading ? <h1>CARREGANDO</h1> : 
-         <S.DetailWraper>
-         
-          {ship && ship.ship.name}
-         </S.DetailWraper>
-     } 
-       
+            {loading ? <h1>CARREGANDO</h1> : ship && (
+                <S.DetailWraper>
+
+                    <img src={ship.ship.image} alt="" />
+                    <S.InfoWrapper>
+                        <h1> {ship.ship.name}</h1>
+                    </S.InfoWrapper>
+
+
+
+                </S.DetailWraper>
+            )
+            }
+
         </>
     )
 }

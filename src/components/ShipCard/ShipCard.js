@@ -2,9 +2,12 @@ import React from 'react'
 import * as S from './styles'
 import { Link } from 'react-router-dom'
 
+
 const ShipCard = ({ name, home_port, image, id }) => {
+    
+    
     return (
-        <Link to={`/ship/${id}`} >
+        <Link to={{pathname:`/ship/${id}`, state: 1 }} >
         <S.CardWrapper>
             
                 <img src={image} alt="" />

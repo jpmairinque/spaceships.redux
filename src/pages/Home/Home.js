@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
-import { useQuery, gql } from '@apollo/client'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useEffect, useMemo, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { setShips } from '../../redux/actions/ShipsActions'
-import ShipCard from '../../components/ShipCard/ShipCard'
 import { ShipsList } from '../../components/ShipsList/ShipsList'
+import { request, gql, GraphQLClient } from 'graphql-request'
+
 
 const QUERY_LIST_OF_SHIPS = gql`
 
@@ -18,28 +18,29 @@ const QUERY_LIST_OF_SHIPS = gql`
 
 `
 
-const Home = () => {
+const Home = () => {    
 
-    
-    const { ships } = useSelector((state) => state.allShips)
+    const [loading, setLoading] = useState(true)    
     const dispatch = useDispatch()
+    const client = new GraphQLClient('https://api.spacex.land/graphql/') 
 
-    const { data, loading, error } = useQuery(QUERY_LIST_OF_SHIPS)
+    const fetchShips = async (query) => {
+        const data = await client.request(query)
+        dispatch(setShips(data))
+        setLoading(false)
+    }
 
-    console.log("xablau")
-
-    useEffect(() => {
-        dispatch(setShips(data, error))
-    }, [data])
-
+    useEffect(() => {       
+       fetchShips(QUERY_LIST_OF_SHIPS)    
+    }, [])
     
     return (
-        <div>
+        <>
             {loading ?
                 <h1>CARREGANDO</h1>
-                : <ShipsList ships={ships}/>}
+                : <ShipsList/>}
 
-        </div>
+        </>
     )
 }
 
