@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-const FadeAnimation= keyframes`
+const FadeAnimation = keyframes`
 
     0%{
         opacity: 0
@@ -34,11 +34,22 @@ export const DetailWraper = styled.div`
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
 
+   
+
 `
 
 export const InfoWrapper = styled.div`
 
-background-color: blue;
-display: flex;
-flex-direction: column;
+    margin-top: 70px;
+    margin-left: 20px;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+
+    h1{
+        margin-bottom: 1rem;
+    }
+    p{
+        margin-bottom: 3px;
+    }
 `

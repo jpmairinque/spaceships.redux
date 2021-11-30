@@ -22,7 +22,7 @@ export const ListWrapper = styled.div`
     padding: 2rem;
     align-items: center;
     justify-content: center;
-    margin-top: 90px;
+    margin-top: 70px;
 
     animation: ${FadeAnimation} 0.5s ; 
  

@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import * as S from './styles'
 import { useParams } from 'react-router'
-import { useQuery, gql } from '@apollo/client'
+import { gql } from '@apollo/client'
 import { setShipDetail } from '../../redux/actions/ShipDetailActions'
+import { GraphQLClient } from 'graphql-request'
+import Loader from '../../components/Loader/Loader'
 
 
 
@@ -25,24 +27,37 @@ query Ship($id: ID!) {
 const ShipDetail = () => {
 
     const { shipID } = useParams()
-    const { data, loading, error } = useQuery(QUERY_SHIP_DETAIL, { variables: { id: shipID } })
-
-    const { ship } = useSelector((state) => state.shipDetail)
+    const { ship } = useSelector((state) => state.shipDetail).ship
     const dispatch = useDispatch()
 
+    const [loading, setLoading] = useState(true)    
+   
+    const client = new GraphQLClient('https://api.spacex.land/graphql/')
 
-    useEffect(() => {
-        dispatch(setShipDetail(data, error))
-    }, [data,error])
+    const fetchShip = async (query) => {
+        const data = await client.request(query, {id: shipID})
+        dispatch(setShipDetail(data))
+        setLoading(false)
+    }
+
+    useEffect(() => {       
+       fetchShip(QUERY_SHIP_DETAIL)    
+    }, [])
 
     return (
         <>
-            {loading ? <h1>CARREGANDO</h1> : ship && (
-                <S.DetailWraper>
-
-                    <img src={ship.ship.image} alt="" />
+            {loading ? <Loader/> : (
+                <S.DetailWraper>                   
+                    <img src={ship.image} alt="" />
                     <S.InfoWrapper>
-                        <h1> {ship.ship.name}</h1>
+                        <h1> {ship.name}</h1>
+                        {ship.active ? <h2 style={{color: 'green'}}>Active</h2> : <h2 style={{color: 'red'}}>Inactive</h2>}
+                        <h3>{ship.type}</h3>
+                      {ship.attempted_landings && <p><span>Attempted Landings:</span> {ship.attempted_landings}</p>}  
+                      {ship.succesful_landings && <p><span>Succesful Landings:</span> {ship.succesful_landings}</p>}                       
+                        <p>{ship.sucessful_landings}</p>
+                        <p>Year: {ship.year_built}</p>
+                        <p>{ship.model}</p>
                     </S.InfoWrapper>
 
 

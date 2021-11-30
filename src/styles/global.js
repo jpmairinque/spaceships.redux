@@ -11,15 +11,16 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Inter', sans-serif;
 
     ::-webkit-scrollbar {
-    display: none;
+      width: 5px;
+      height: 80%;
     } 
-    /* ::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
     border-radius: 40px;
     }
     ::-webkit-scrollbar-thumb {
       background: #9b98ee;
       border-radius: 40px;
-    } */
+    }
    
   }
 

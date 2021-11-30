@@ -2,7 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setShips } from '../../redux/actions/ShipsActions'
 import { ShipsList } from '../../components/ShipsList/ShipsList'
-import { request, gql, GraphQLClient } from 'graphql-request'
+import {gql, GraphQLClient } from 'graphql-request'
+import Loader from '../../components/Loader/Loader'
 
 
 const QUERY_LIST_OF_SHIPS = gql`
@@ -37,7 +38,7 @@ const Home = () => {
     return (
         <>
             {loading ?
-                <h1>CARREGANDO</h1>
+                <Loader/>
                 : <ShipsList/>}
 
         </>
