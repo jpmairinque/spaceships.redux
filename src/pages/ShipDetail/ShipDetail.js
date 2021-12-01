@@ -40,7 +40,8 @@ const ShipDetail = () => {
         setLoading(false)
     }
 
-    useEffect(() => {       
+    useEffect(() => {     
+          
        fetchShip(QUERY_SHIP_DETAIL)    
     }, [])
 

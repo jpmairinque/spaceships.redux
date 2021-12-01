@@ -21,7 +21,7 @@ const QUERY_LIST_OF_SHIPS = gql`
 
 const Home = () => {    
 
-    const [loading, setLoading] = useState(true)    
+    const [loading, setLoading] = useState(true)   
     const dispatch = useDispatch()
     const client = new GraphQLClient('https://api.spacex.land/graphql/') 
 
@@ -32,7 +32,7 @@ const Home = () => {
     }
 
     useEffect(() => {       
-       fetchShips(QUERY_LIST_OF_SHIPS)    
+        fetchShips(QUERY_LIST_OF_SHIPS)    
     }, [])
     
     return (

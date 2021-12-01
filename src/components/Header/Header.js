@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <S.HeaderWrapper>
 
-            {pathname != '/' &&  <Link to='/'><img src={Arrow} alt=""/></Link>}   
+            {pathname !== '/' &&  <Link to='/'><img src={Arrow} alt=""/></Link>}   
             <S.FlexWrapper>
 
            
