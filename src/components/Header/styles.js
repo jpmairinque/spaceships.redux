@@ -24,9 +24,6 @@ export const HeaderWrapper = styled.header`
       
     }
 
- 
-
-
 `
 
 export const FlexWrapper = styled.div`
