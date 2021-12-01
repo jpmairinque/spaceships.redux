@@ -1,5 +1,3 @@
-
-  
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -18,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 40px;
     }
     ::-webkit-scrollbar-thumb {
-      background: #9b98ee;
+      background: #5B7787;
       border-radius: 40px;
     }
    
