@@ -7,23 +7,17 @@ import { QUERY_LIST_OF_SHIPS, client } from '../../graphql/queries'
 
 const Home = () => {    
 
-    const [loading, setLoading] = useState(true)   
     const dispatch = useDispatch()
-    const { ship } = useSelector((state) => state.shipDetail).ship
+    const { loading } = useSelector((state) => state.allShips)
 
     const fetchShips = async (query) => {
-        setLoading(true)
         const data = await client.request(query)
         dispatch(setShips(data))
-        setLoading(false)
     }
 
-    useEffect(() => {       
-        if(!ship){
-        fetchShips(QUERY_LIST_OF_SHIPS)   
-        } else {
-            setLoading(false)
-        }
+    useEffect(() => {  
+        if (loading) fetchShips(QUERY_LIST_OF_SHIPS)      
+         
     }, [])
     
     return (

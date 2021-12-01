@@ -1,8 +1,8 @@
-export const setShips = (ships, error) => {
+export const setShips = (ships) => {
 
     return{
         type: 'SET_SHIPS',
-        payload: {ships: ships, error: error}
+        payload: {ships: ships}
     }
 
 
