@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setShips } from '../../redux/actions/ShipsActions'
 import { ShipsList } from '../../components/ShipsList/ShipsList'
