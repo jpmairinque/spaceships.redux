@@ -19,11 +19,10 @@ const Home = () => {
     }
 
     useEffect(() => {       
-        if (ship) {
-            setLoading(false)
-
+        if(!ship){
+        fetchShips(QUERY_LIST_OF_SHIPS)   
         } else {
-            fetchShips(QUERY_LIST_OF_SHIPS)
+            setLoading(false)
         }
     }, [])
     

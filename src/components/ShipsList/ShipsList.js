@@ -12,7 +12,7 @@ export const ShipsList = () => {
 
     return (
         <S.ListWrapper >
-            {(ships && ships.ships.map((ship, key) => {
+            {(ships.ships.map((ship, key) => {
                     return (
 
                        ship.image && <ShipCard {...ship} key={ship.id}/>
