@@ -1,16 +1,14 @@
-
 const initialState = {
-    ships: [],
-    loading: true
-}
+  ships: [],
+  loading: true,
+};
 
-export const shipsReducer = (state = initialState, { type, payload})=>{
+export const shipsReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "SET_SHIPS":
+      return { ...state, ships: payload.ships, loading: false };
 
-    switch (type) {
-        case 'SET_SHIPS':
-            return {...state, ships: payload.ships, loading: false}
-    
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};

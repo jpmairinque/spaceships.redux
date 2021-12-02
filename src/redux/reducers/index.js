@@ -3,8 +3,8 @@ import { shipsReducer } from "./ShipsReducer";
 import { shipDetailReducer } from "./ShipDetailReducer";
 
 const reducers = combineReducers({
-    allShips: shipsReducer,
-    shipDetail: shipDetailReducer
-})
+  allShips: shipsReducer,
+  shipDetail: shipDetailReducer,
+});
 
-export default reducers
+export default reducers;

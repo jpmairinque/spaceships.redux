@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-
-const FadeAnimation= keyframes`
+const FadeAnimation = keyframes`
 
     0%{
         opacity: 0
@@ -13,19 +12,14 @@ const FadeAnimation= keyframes`
     }
 
 
-`
+`;
 
 export const ListWrapper = styled.div`
-
-    display: flex;
-    flex-wrap: wrap;
-    padding: 2rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-    animation: ${FadeAnimation} 0.5s ; 
- 
-
-
-
-`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  animation: ${FadeAnimation} 0.5s;
+`;

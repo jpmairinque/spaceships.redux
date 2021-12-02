@@ -1,14 +1,13 @@
 const initialState = {
-    ship: {}
-}
+  ship: {},
+};
 
-export const shipDetailReducer = (state = initialState, { type, payload})=>{
+export const shipDetailReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "SET_SHIP":
+      return { ...state, ship: payload.ship };
 
-    switch (type) {
-        case 'SET_SHIP':
-            return {...state, ship: payload.ship}
-    
-        default:
-            return state;
-    }
-}
+    default:
+      return state;
+  }
+};
