@@ -1,10 +1,13 @@
-# Space Ships 🖼✒
+# Space Ships 🚢
 
 The app lists to the user all ships and sea plataforms from the **Space X's GraphQL** [api](https://api.spacex.land/graphql/), and click on the cards to find out additional informations about them.
 
 *// A aplicação permite que o usuário veja os navios e plataformas marítimas disponíveis na API GraphQL da SpaceX, podendo clicar nos cards para descobrir mais sobre os mesmos.*
 
 ## App Overview // *overview da aplicação* 💻
+
+![2021-12-06 17-35-20](https://user-images.githubusercontent.com/53411709/144918978-0aba2511-7965-4413-964f-f30be01b97e4.gif)
+
 
 ##
 
