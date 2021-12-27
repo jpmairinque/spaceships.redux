@@ -4,6 +4,7 @@ The app lists to the user all ships and sea plataforms from the **Space X's Grap
 
 *// A aplicação permite que o usuário veja os navios e plataformas marítimas disponíveis na API GraphQL da SpaceX, podendo clicar nos cards para descobrir mais sobre os mesmos.*
 
+<a href="https://spaceships-redux.vercel.app/" target="_blank"><img  alt="Open Artbloom"  src="https://img.shields.io/badge/open%20app-061345?style=for-the-badge"></a>
 ## App Overview // *overview da aplicação* 💻
 
 ![2021-12-06 17-35-20](https://user-images.githubusercontent.com/53411709/144918978-0aba2511-7965-4413-964f-f30be01b97e4.gif)
